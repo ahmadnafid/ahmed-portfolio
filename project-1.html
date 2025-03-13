@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أحمد | مصمم ويب</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d1117;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://source.unsplash.com/1600x900/?coding,web') no-repeat center center/cover;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1s forwards 0.5s;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0;
+      animation: fadeIn 1s forwards 1s;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 30px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+      opacity: 0;
+      animation: fadeIn 1s forwards 1.5s;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #161b22;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    section.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0d1117;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>مرحبًا، أنا أحمد</h1>
+    <p>مصمم ويب محترف أبدع بتأثيرات HTML و CSS</p>
+    <a href="https://khamsat.com/user/ahmad1245" class="btn" target="_blank">تواصل معي</a>
+  </header>
+
+  <section id="about">
+    <h2>تجربة ويب حديثة وتأثيرات مميزة</h2>
+  </section>
+
+  <section>
+    <h2>تواصل معي وابدأ مشروعك الآن</h2>
+  </section>
+
+  <footer>
+    <p>© 2025 - أحمد نافذ | جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 100) {
+          section.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
